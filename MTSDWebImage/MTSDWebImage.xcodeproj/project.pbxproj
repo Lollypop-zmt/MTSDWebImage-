@@ -13,6 +13,7 @@
 		CE8C5B681EFD359300FD1321 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8C5B661EFD359300FD1321 /* Main.storyboard */; };
 		CE8C5B6A1EFD359300FD1321 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8C5B691EFD359300FD1321 /* Assets.xcassets */; };
 		CE8C5B6D1EFD359300FD1321 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8C5B6B1EFD359300FD1321 /* LaunchScreen.storyboard */; };
+		CE8C5B771EFD36C300FD1321 /* DownLoadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8C5B761EFD36C300FD1321 /* DownLoadOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		CE8C5B691EFD359300FD1321 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE8C5B6C1EFD359300FD1321 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE8C5B6E1EFD359300FD1321 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE8C5B751EFD36C300FD1321 /* DownLoadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownLoadOperation.h; sourceTree = "<group>"; };
+		CE8C5B761EFD36C300FD1321 /* DownLoadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownLoadOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 		CE8C5B5C1EFD359300FD1321 /* MTSDWebImage */ = {
 			isa = PBXGroup;
 			children = (
+				CE8C5B741EFD369200FD1321 /* MTSDWebImage */,
 				CE8C5B601EFD359300FD1321 /* AppDelegate.h */,
 				CE8C5B611EFD359300FD1321 /* AppDelegate.m */,
 				CE8C5B631EFD359300FD1321 /* ViewController.h */,
@@ -77,6 +81,15 @@
 				CE8C5B5E1EFD359300FD1321 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CE8C5B741EFD369200FD1321 /* MTSDWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				CE8C5B751EFD36C300FD1321 /* DownLoadOperation.h */,
+				CE8C5B761EFD36C300FD1321 /* DownLoadOperation.m */,
+			);
+			path = MTSDWebImage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +166,7 @@
 				CE8C5B651EFD359300FD1321 /* ViewController.m in Sources */,
 				CE8C5B621EFD359300FD1321 /* AppDelegate.m in Sources */,
 				CE8C5B5F1EFD359300FD1321 /* main.m in Sources */,
+				CE8C5B771EFD36C300FD1321 /* DownLoadOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +321,7 @@
 				CE8C5B731EFD359300FD1321 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

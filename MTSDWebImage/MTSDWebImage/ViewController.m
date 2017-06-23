@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "DownLoadOperation.h"
 @interface ViewController ()
 
 @end
@@ -17,6 +17,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    //准备队列
+    NSOperationQueue *queue = [NSOperationQueue new];
+    
+    //自定义操作
+    DownLoadOperation *op = [DownLoadOperation new];
+    
+    //操作加入队列
+    [queue addOperation:op];
+    
 }
 
 
