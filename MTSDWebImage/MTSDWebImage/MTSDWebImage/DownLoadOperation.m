@@ -42,6 +42,9 @@
     NSData *data = [NSData dataWithContentsOfURL:url];
     UIImage *image = [UIImage imageWithData:data];
     
+    //模拟网络延迟
+    [NSThread sleepForTimeInterval:1.0];
+    
     //图片下载结束后用block传到外界
     if(_finishedBlock){
         
