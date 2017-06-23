@@ -8,7 +8,29 @@
 
 #import "DownLoadOperation.h"
 
+@interface DownLoadOperation()
+
+//接受外界传入的URL
+@property(nonatomic,copy)NSString *URLString;
+
+//回调block
+@property(nonatomic,copy) void(^finishedBlock)(UIImage *iamge);
+
+
+@end
+
 @implementation DownLoadOperation
+
++ (instancetype)downLoadOperationWithURLString:(NSString *)URLString finished:(void (^)(UIImage *))finishedBlock{
+    
+    DownLoadOperation *op = [DownLoadOperation new];
+    //记录全局的图片地址
+    op.URLString =  URLString;
+    // 记录全局的回调代码块
+    op.finishedBlock = finishedBlock;
+    
+    return op;
+}
 
 
 //操作的入口, 默认异步执行

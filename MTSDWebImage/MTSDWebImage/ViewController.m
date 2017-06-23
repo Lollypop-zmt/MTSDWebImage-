@@ -21,14 +21,12 @@
     //准备队列
     NSOperationQueue *queue = [NSOperationQueue new];
     
-    //自定义操作
-    DownLoadOperation *op = [DownLoadOperation new];
+    //准备下载图片
+    NSString *URLString = @"http://paper.taizhou.com.cn/tzwb/res/1/2/2015-01/20/12/res03_attpic_brief.jpg";
     
-    //向op传入图片地址
-    op.URLString = @"http://paper.taizhou.com.cn/tzwb/res/1/2/2015-01/20/12/res03_attpic_brief.jpg";
-    // 向op中传入用于回到图片对象的代码块
-    [op setFinishedBlock:^(UIImage *image) {
-        NSLog(@"%@",[NSThread currentThread]);
+    //自定义操作
+    DownLoadOperation *op = [DownLoadOperation downLoadOperationWithURLString:URLString finished:^(UIImage *image) {
+        NSLog(@"%@ %@",image,[NSThread currentThread]);
     }];
     
     //操作加入队列

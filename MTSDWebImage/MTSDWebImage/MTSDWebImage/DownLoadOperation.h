@@ -10,10 +10,15 @@
 #import <UIKit/UIKit.h>
 @interface DownLoadOperation : NSOperation
 
-//接受外界传入的URL
-@property(nonatomic,copy)NSString *URLString;
 
-//回调block
-@property(nonatomic,copy) void(^finishedBlock)(UIImage *iamge);
+
+/**
+ 创建操作和下载图片的主要方法
+
+ @param URLString 图片地址
+ @param finishedBlock 下载结束后的回调
+ @return 自定义的下载操作
+ */
++ (instancetype)downLoadOperationWithURLString:(NSString *)URLString finished:(void(^)(UIImage *image))finishedBlock;
 
 @end
