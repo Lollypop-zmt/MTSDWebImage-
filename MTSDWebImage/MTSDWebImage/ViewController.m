@@ -12,10 +12,18 @@
 #import "APPModel.h"
 #import "YYModel.h"
 @interface ViewController ()
-
+//控件
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
+//数据源
 @property(nonatomic,strong)NSArray *appList;
+//全局队列
 @property(nonatomic,strong)NSOperationQueue *queue;
+//操作缓存池
+@property(nonatomic,strong)NSMutableDictionary *opCaChe;
+
+//记录上一次的图片地址
+@property(nonatomic,strong)NSString *lastURLString;
+
 @end
 
 @implementation ViewController
@@ -27,6 +35,8 @@
     //准备队列
      self.queue = [NSOperationQueue new];
     
+    //实例化操作缓存池
+    self.opCaChe = [[NSMutableDictionary alloc] init];
     
     [self loadData];
     
@@ -40,16 +50,28 @@
     //获取随机模型
     APPModel *model = self.appList[random];
     
-//    //准备下载图片
-//    NSString *URLString = @"http://paper.taizhou.com.cn/tzwb/res/1/2/2015-01/20/12/res03_attpic_brief.jpg";
-//    
-    //自定义操作
+    // 在建立下载操作前,判断连续传入的图片地址是否一样,如果不一样,就把前一个下载操作取消掉
+    if(![model.icon isEqualToString:self.lastURLString] && self.lastURLString != nil){
+        //取出上一个图片的下载操作,用cancel取消掉
+        DownLoadOperation *lastQueue = [self.opCaChe objectForKey:_lastURLString];
+        [lastQueue cancel];
+        //取消掉的操作从操作缓存池中移除
+        [self.opCaChe removeObjectForKey:_lastURLString];
+    }
+    //记录上一次图片地址
+    _lastURLString = model.icon;
+    
+    //自定义操作 获取随机的图片地址,交给DownloadOperation去下载
     DownLoadOperation *op = [DownLoadOperation downLoadOperationWithURLString:model.icon finished:^(UIImage *image) {
        // NSLog(@"%@ %@",image,[NSThread currentThread]);
         self.iconImageView.image = image;
         
+        //下载完成后移除对应的操作
+        [self.opCaChe removeObjectForKey:model.icon];
     }];
     
+    //把操作添加到操作缓存池
+    [self.opCaChe setObject:op forKey:model.icon];
     //操作加入队列
     [self.queue addOperation:op];
 

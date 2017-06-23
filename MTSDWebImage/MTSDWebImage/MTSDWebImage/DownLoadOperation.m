@@ -45,12 +45,17 @@
     //模拟网络延迟
     [NSThread sleepForTimeInterval:1.0];
     
+    if(self.isCancelled == YES){
+        NSLog(@"取消 = %@",self.URLString);
+        return;
+    }
+    
     //图片下载结束后用block传到外界
     if(_finishedBlock){
         
         //回到主线程回调代码块
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-           
+            NSLog(@"完成 = %@",self.URLString);
             _finishedBlock(image);
         }];
     }
