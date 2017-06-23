@@ -39,6 +39,7 @@
 		CE8C5BC71EFD42E000FD1321 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8C5BAB1EFD42E000FD1321 /* UIView+WebCacheOperation.m */; };
 		CE8C5BC81EFD42E000FD1321 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8C5BAE1EFD42E000FD1321 /* NSObject+YYModel.m */; };
 		CE8C5BC91EFD42E000FD1321 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8C5BB01EFD42E000FD1321 /* YYClassInfo.m */; };
+		CE8C5BCC1EFD4F6F00FD1321 /* MTSDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8C5BCB1EFD4F6F00FD1321 /* MTSDWebImageManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +108,8 @@
 		CE8C5BAF1EFD42E000FD1321 /* YYClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYClassInfo.h; sourceTree = "<group>"; };
 		CE8C5BB01EFD42E000FD1321 /* YYClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYClassInfo.m; sourceTree = "<group>"; };
 		CE8C5BB11EFD42E000FD1321 /* YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
+		CE8C5BCA1EFD4F6F00FD1321 /* MTSDWebImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSDWebImageManager.h; sourceTree = "<group>"; };
+		CE8C5BCB1EFD4F6F00FD1321 /* MTSDWebImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSDWebImageManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +172,8 @@
 			children = (
 				CE8C5B751EFD36C300FD1321 /* DownLoadOperation.h */,
 				CE8C5B761EFD36C300FD1321 /* DownLoadOperation.m */,
+				CE8C5BCA1EFD4F6F00FD1321 /* MTSDWebImageManager.h */,
+				CE8C5BCB1EFD4F6F00FD1321 /* MTSDWebImageManager.m */,
 			);
 			path = MTSDWebImage;
 			sourceTree = "<group>";
@@ -328,6 +333,7 @@
 			files = (
 				CE8C5BC21EFD42E000FD1321 /* UIImage+GIF.m in Sources */,
 				CE8C5BB51EFD42E000FD1321 /* AFURLRequestSerialization.m in Sources */,
+				CE8C5BCC1EFD4F6F00FD1321 /* MTSDWebImageManager.m in Sources */,
 				CE8C5BC01EFD42E000FD1321 /* SDWebImagePrefetcher.m in Sources */,
 				CE8C5B651EFD359300FD1321 /* ViewController.m in Sources */,
 				CE8C5B621EFD359300FD1321 /* AppDelegate.m in Sources */,

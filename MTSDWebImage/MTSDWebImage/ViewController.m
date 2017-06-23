@@ -11,6 +11,7 @@
 #import "AFNetworking.h"
 #import "APPModel.h"
 #import "YYModel.h"
+#import "MTSDWebImageManager.h"
 @interface ViewController ()
 //控件
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
@@ -31,12 +32,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
-    //准备队列
-     self.queue = [NSOperationQueue new];
-    
-    //实例化操作缓存池
+    // 准备队列
+    self.queue = [NSOperationQueue new];
+    // 准备操作缓存池
     self.opCaChe = [[NSMutableDictionary alloc] init];
+
     
     [self loadData];
     
@@ -61,21 +61,11 @@
     //记录上一次图片地址
     _lastURLString = model.icon;
     
-    //自定义操作 获取随机的图片地址,交给DownloadOperation去下载
-    DownLoadOperation *op = [DownLoadOperation downLoadOperationWithURLString:model.icon finished:^(UIImage *image) {
-       // NSLog(@"%@ %@",image,[NSThread currentThread]);
+    // 单例接管下载操作 : 取消操作失效(稍后进行封装)
+    [[MTSDWebImageManager shareManager] downLoadImageWithURLString:model.icon comoletion:^(UIImage *image) {
         self.iconImageView.image = image;
-        
-        //下载完成后移除对应的操作
-        [self.opCaChe removeObjectForKey:model.icon];
     }];
-    
-    //把操作添加到操作缓存池
-    [self.opCaChe setObject:op forKey:model.icon];
-    //操作加入队列
-    [self.queue addOperation:op];
-
-    
+        
 }
 
 // 获取JSON数据 : 测试DownloadOperation的数据的来源,拿到数据后再去点击屏幕

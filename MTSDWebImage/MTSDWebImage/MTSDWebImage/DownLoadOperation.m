@@ -56,6 +56,7 @@
         //回到主线程回调代码块
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             NSLog(@"完成 = %@",self.URLString);
+            
             _finishedBlock(image);
         }];
     }
