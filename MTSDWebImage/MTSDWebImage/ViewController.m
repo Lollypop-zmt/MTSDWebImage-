@@ -52,11 +52,9 @@
     
     // 在建立下载操作前,判断连续传入的图片地址是否一样,如果不一样,就把前一个下载操作取消掉
     if(![model.icon isEqualToString:self.lastURLString] && self.lastURLString != nil){
-        //取出上一个图片的下载操作,用cancel取消掉
-        DownLoadOperation *lastQueue = [self.opCaChe objectForKey:_lastURLString];
-        [lastQueue cancel];
-        //取消掉的操作从操作缓存池中移除
-        [self.opCaChe removeObjectForKey:_lastURLString];
+        
+        //单利接管取消操作
+        [[MTSDWebImageManager shareManager] cancelLastOperation:_lastURLString];
     }
     //记录上一次图片地址
     _lastURLString = model.icon;

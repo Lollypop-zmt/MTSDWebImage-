@@ -22,4 +22,11 @@
  */
 - (void)downLoadImageWithURLString:(NSString *)URLString comoletion:(void(^)(UIImage *image))completionBlock;
 
+/**
+ 单利取消操作
+
+ @param lastURLString 最后一个操作
+ */
+- (void)cancelLastOperation:(NSString *)lastURLString;
+
 @end
