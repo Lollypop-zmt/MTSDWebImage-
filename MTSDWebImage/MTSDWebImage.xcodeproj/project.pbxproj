@@ -41,6 +41,7 @@
 		CE8C5BC91EFD42E000FD1321 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8C5BB01EFD42E000FD1321 /* YYClassInfo.m */; };
 		CE8C5BCC1EFD4F6F00FD1321 /* MTSDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8C5BCB1EFD4F6F00FD1321 /* MTSDWebImageManager.m */; };
 		CEBFFE661EFFDC7900603617 /* NSString+path.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBFFE651EFFDC7900603617 /* NSString+path.m */; };
+		CED0E8191EFFE5B3008C84FC /* UIImageView+WebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0E8181EFFE5B3008C84FC /* UIImageView+WebImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,6 +114,8 @@
 		CE8C5BCB1EFD4F6F00FD1321 /* MTSDWebImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSDWebImageManager.m; sourceTree = "<group>"; };
 		CEBFFE641EFFDC7900603617 /* NSString+path.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+path.h"; sourceTree = "<group>"; };
 		CEBFFE651EFFDC7900603617 /* NSString+path.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+path.m"; sourceTree = "<group>"; };
+		CED0E8171EFFE5B3008C84FC /* UIImageView+WebImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebImage.h"; sourceTree = "<group>"; };
+		CED0E8181EFFE5B3008C84FC /* UIImageView+WebImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebImage.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +182,8 @@
 				CE8C5B761EFD36C300FD1321 /* DownLoadOperation.m */,
 				CE8C5BCA1EFD4F6F00FD1321 /* MTSDWebImageManager.h */,
 				CE8C5BCB1EFD4F6F00FD1321 /* MTSDWebImageManager.m */,
+				CED0E8171EFFE5B3008C84FC /* UIImageView+WebImage.h */,
+				CED0E8181EFFE5B3008C84FC /* UIImageView+WebImage.m */,
 			);
 			path = MTSDWebImage;
 			sourceTree = "<group>";
@@ -361,6 +366,7 @@
 				CE8C5BBD1EFD42E000FD1321 /* SDWebImageDownloader.m in Sources */,
 				CE8C5BC51EFD42E000FD1321 /* UIImageView+HighlightedWebCache.m in Sources */,
 				CE8C5BBC1EFD42E000FD1321 /* SDWebImageDecoder.m in Sources */,
+				CED0E8191EFFE5B3008C84FC /* UIImageView+WebImage.m in Sources */,
 				CE8C5BC41EFD42E000FD1321 /* UIImage+WebP.m in Sources */,
 				CE8C5BC81EFD42E000FD1321 /* NSObject+YYModel.m in Sources */,
 				CE8C5BBF1EFD42E000FD1321 /* SDWebImageManager.m in Sources */,

@@ -12,6 +12,7 @@
 #import "APPModel.h"
 #import "YYModel.h"
 #import "MTSDWebImageManager.h"
+#import "UIImageView+WebImage.h"
 @interface ViewController ()
 //控件
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
@@ -50,19 +51,10 @@
     //获取随机模型
     APPModel *model = self.appList[random];
     
-    // 在建立下载操作前,判断连续传入的图片地址是否一样,如果不一样,就把前一个下载操作取消掉
-    if(![model.icon isEqualToString:self.lastURLString] && self.lastURLString != nil){
-        
-        //单利接管取消操作
-        [[MTSDWebImageManager shareManager] cancelLastOperation:_lastURLString];
-    }
-    //记录上一次图片地址
-    _lastURLString = model.icon;
     
-    // 单例接管下载操作 : 取消操作失效(稍后进行封装)
-    [[MTSDWebImageManager shareManager] downLoadImageWithURLString:model.icon comoletion:^(UIImage *image) {
-        self.iconImageView.image = image;
-    }];
+    //分类接管下载
+    [self.iconImageView mtsd_setImageWithURLSteing:model.icon];
+    
         
 }
 
