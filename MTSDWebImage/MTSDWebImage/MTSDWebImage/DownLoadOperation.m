@@ -7,7 +7,7 @@
 //
 
 #import "DownLoadOperation.h"
-
+#import "NSString+path.h"
 @interface DownLoadOperation()
 
 //接受外界传入的URL
@@ -41,6 +41,11 @@
     NSURL *url = [NSURL URLWithString:_URLString];
     NSData *data = [NSData dataWithContentsOfURL:url];
     UIImage *image = [UIImage imageWithData:data];
+    
+    //实现沙盒缓存,把图片写入沙盒
+    if(image != nil){
+        [data writeToFile:[self.URLString appendCachePath] atomically:YES];
+    }
     
     //模拟网络延迟
     [NSThread sleepForTimeInterval:1.0];

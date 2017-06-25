@@ -40,6 +40,7 @@
 		CE8C5BC81EFD42E000FD1321 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8C5BAE1EFD42E000FD1321 /* NSObject+YYModel.m */; };
 		CE8C5BC91EFD42E000FD1321 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8C5BB01EFD42E000FD1321 /* YYClassInfo.m */; };
 		CE8C5BCC1EFD4F6F00FD1321 /* MTSDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8C5BCB1EFD4F6F00FD1321 /* MTSDWebImageManager.m */; };
+		CEBFFE661EFFDC7900603617 /* NSString+path.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBFFE651EFFDC7900603617 /* NSString+path.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +111,8 @@
 		CE8C5BB11EFD42E000FD1321 /* YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
 		CE8C5BCA1EFD4F6F00FD1321 /* MTSDWebImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSDWebImageManager.h; sourceTree = "<group>"; };
 		CE8C5BCB1EFD4F6F00FD1321 /* MTSDWebImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSDWebImageManager.m; sourceTree = "<group>"; };
+		CEBFFE641EFFDC7900603617 /* NSString+path.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+path.h"; sourceTree = "<group>"; };
+		CEBFFE651EFFDC7900603617 /* NSString+path.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+path.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +173,8 @@
 		CE8C5B741EFD369200FD1321 /* MTSDWebImage */ = {
 			isa = PBXGroup;
 			children = (
+				CEBFFE641EFFDC7900603617 /* NSString+path.h */,
+				CEBFFE651EFFDC7900603617 /* NSString+path.m */,
 				CE8C5B751EFD36C300FD1321 /* DownLoadOperation.h */,
 				CE8C5B761EFD36C300FD1321 /* DownLoadOperation.m */,
 				CE8C5BCA1EFD4F6F00FD1321 /* MTSDWebImageManager.h */,
@@ -338,6 +343,7 @@
 				CE8C5B651EFD359300FD1321 /* ViewController.m in Sources */,
 				CE8C5B621EFD359300FD1321 /* AppDelegate.m in Sources */,
 				CE8C5BB91EFD42E000FD1321 /* NSData+ImageContentType.m in Sources */,
+				CEBFFE661EFFDC7900603617 /* NSString+path.m in Sources */,
 				CE8C5B5F1EFD359300FD1321 /* main.m in Sources */,
 				CE8C5BB71EFD42E000FD1321 /* AFURLSessionManager.m in Sources */,
 				CE8C5BC91EFD42E000FD1321 /* YYClassInfo.m in Sources */,
