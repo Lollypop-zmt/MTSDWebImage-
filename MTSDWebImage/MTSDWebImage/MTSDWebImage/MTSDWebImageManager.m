@@ -16,7 +16,7 @@
 //操作缓存池
 @property(nonatomic,strong)NSMutableDictionary *opCaChe;
 //图片缓存池
-@property(nonatomic,strong)NSMutableDictionary *imageCaChe;
+@property(nonatomic,strong)NSCache *imageCaChe;
 
 @end
 
@@ -40,11 +40,20 @@
         //实例化
         self.queue = [NSOperationQueue new];
         self.opCaChe = [NSMutableDictionary new];
-        self.imageCaChe = [NSMutableDictionary new];
+        self.imageCaChe = [NSCache new];
+        
+        //注册通知 处理内存警告
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ReceiveMemoryWarning) name:UIApplicationDidReceiveMemoryWarningNotification object:nil];
     }
     return self;
 }
 
+
+//有风险可能是NSCaChe失效
+- (void)ReceiveMemoryWarning{
+    [self.imageCaChe removeAllObjects];
+    
+}
 - (void)downLoadImageWithURLString:(NSString *)URLString comoletion:(void (^)(UIImage *))completionBlock{
     
     //在下载图片前判断是否存在缓存(图片+沙盒)
